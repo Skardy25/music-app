@@ -5,11 +5,12 @@ import SearchInput from "@/components/SearchInput";
 
 interface SearchProps {
     searchParams: {
+        [key: string]: string | string[] | undefined;
         title: string;
     }
 }
 
-const Search = async ({searchParams}: SearchProps) => {
+const Search = async ({ searchParams }: SearchProps) => {
     const songs = await getSongByTitle(searchParams.title);
 
     return (
